@@ -43,14 +43,28 @@
             height: 320px;
             object-fit: cover;
         }
+        .workers{
+            height: 320px;
+
+            border-radius: 4px;
+            margin-bottom: 40px;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
+    {% include 'navbar.html'%}
+    <img class="banner img-fluid" src="static/banner.jpg" alt="">
+    <div class="container mt-5">
         <h1 class="text-center mt-2 mb-4">{{company_name}} Career</h1>
-        <img class="banner img-fluid" src="http://127.0.0.1:5000/static/banner.jpg" alt="">
+        <div class="row">
+            <div class="col-md-6">
         <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa aliquam temporibus ea quae dicta, modi ratione voluptatibus vel! Ullam consectetur suscipit, nam quam sit explicabo aperiam odio ipsum reprehenderit praesentium. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum alias voluptas culpa? Deserunt cupiditate fugiat impedit unde eveniet. Non praesentium autem in voluptate sint, doloremque reprehenderit provident ab sit necessitatibus!
         Dolores error veritatis aspernatur qui soluta, illo libero necessitatibus, ullam sequi ad ipsa corporis tenetur, expedita a harum aperiam nam eius numquam dolor velit architecto. Laudantium doloremque quidem amet molestias.</p>
+        </div>
+        <div class="d-none d-md-block col-6">
+            <img class="workers" src="/static/workers.jpg" alt="">
+        </div>
+        </div>
         <h2 class="text-center mt-2 mb-4">Open Postion </h2>
         <p>
             {% for job in jobs %}
@@ -58,8 +72,12 @@
             {% endfor %}
         </p>
         <div class="text-center">
-        <button class="btn btn-primary btn-lg">Contact Us</button>
+            <button class="btn btn-primary">
+                <a class="text-white"href="mailto:tankdhaval049@gmail.com?subject=Inquiry%20Regarding%20[Your%20Subject]&body=Dear%20Dhaval,%0D%0A%0D%0A I would like to inquire about [Your Inquiry Topic].%0D%0A%0D%0A Please provide more details.%0D%0A%0D%0A Best Regards,%0D%0A [Your Name]%0D%0A [Your Contact Information]">Contact Us</a>
+              </button>
+              
         </div>
     </div>
+    {% include 'footer.html' %}
     </body>
 </html>
